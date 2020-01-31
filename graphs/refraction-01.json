@@ -1,0 +1,1467 @@
+{
+  "id": "86a97670-4440-11ea-a033-8f734a96be94",
+  "version": "0.12.0",
+  "name": "refraction-01",
+  "nodes": [
+    {
+      "id": "Rj-O3jb3",
+      "name": "Context",
+      "x": -3.018827457709847,
+      "y": 49.59878813949399,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "resolution",
+          "public": true,
+          "value": "W x H - Inerit"
+        }
+      ]
+    },
+    {
+      "id": "cz-QdAb9W",
+      "name": "Debug",
+      "x": -3.018827457709847,
+      "y": 154.598788139494,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "dpsPW1olK",
+            "port": "out"
+          }
+        },
+        {
+          "name": "debug next frame"
+        }
+      ]
+    },
+    {
+      "id": "dpsPW1olK",
+      "name": "FPS Counter",
+      "x": -4.14004697746077,
+      "y": 109.59878813949399,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "Rj-O3jb3",
+            "port": "out"
+          }
+        },
+        {
+          "name": "t",
+          "value": 0
+        },
+        {
+          "name": "enabled",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "hFQT-tLL_",
+      "name": "Time",
+      "x": -3.018827457709847,
+      "y": 214.598788139494,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "cz-QdAb9W",
+            "port": "out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "WBwSpVAdb",
+      "name": "Frame Recorder",
+      "x": -3.018827457709847,
+      "y": 274.598788139494,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "hFQT-tLL_",
+            "port": "out"
+          }
+        },
+        {
+          "name": "fps",
+          "value": 30
+        },
+        {
+          "name": "duration (s)",
+          "value": 10
+        },
+        {
+          "name": "resolution",
+          "value": "2048 x 2048 - Instagram"
+        },
+        {
+          "name": "start / stop recording"
+        },
+        {
+          "name": "take screenshot",
+          "public": true
+        }
+      ]
+    },
+    {
+      "id": "SH8OiaXKk",
+      "name": "Renderer",
+      "x": 3.6122390621133036,
+      "y": 347.87883530250053,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "WBwSpVAdb",
+            "port": "out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "z2WEkXQCc",
+      "name": "Sequence",
+      "x": -18.098805204488144,
+      "y": 611.5291905708879,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "SH8OiaXKk",
+            "port": "out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "R7343H33q",
+      "name": "DirectionalLight",
+      "x": -380.10705816988127,
+      "y": 1161.8876450908938,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "rd-Ye-g2",
+            "port": "out"
+          }
+        },
+        {
+          "name": "tags",
+          "value": ""
+        },
+        {
+          "name": "position",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "rotation",
+          "value": [
+            29,
+            53.32,
+            -66.4
+          ]
+        },
+        {
+          "name": "color",
+          "value": [
+            0.9085763755693901,
+            0.7486604799644901,
+            0.919803992931599,
+            1.4
+          ]
+        },
+        {
+          "name": "intensity",
+          "value": 1.4
+        },
+        {
+          "name": "castShadows",
+          "value": true
+        },
+        {
+          "name": "bias",
+          "value": 0.1
+        },
+        {
+          "name": "showGizmo",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "FFGF5UFxw",
+      "name": "Group",
+      "x": 117.9498741686175,
+      "y": 1049.2552449571892,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "z2WEkXQCc",
+            "port": "out3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iobvBR_Sp",
+      "name": "Camera",
+      "x": -191.22477990654968,
+      "y": 1003.2104304253382,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "z2WEkXQCc",
+            "port": "out2"
+          }
+        },
+        {
+          "name": "tags",
+          "value": ""
+        },
+        {
+          "name": "position",
+          "value": [
+            9.510275238126729,
+            6.274522411838998,
+            -10.625463077811222
+          ]
+        },
+        {
+          "name": "rotation",
+          "value": [
+            -149.43740372035185,
+            37.621467718357955,
+            160.1769480258362
+          ]
+        },
+        {
+          "name": "resetView"
+        },
+        {
+          "name": "backgroundColor",
+          "value": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "fov",
+          "value": 60
+        },
+        {
+          "name": "near",
+          "value": 0.2
+        },
+        {
+          "name": "far",
+          "value": 100
+        },
+        {
+          "name": "viewport",
+          "value": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "name": "showGizmo",
+          "value": false
+        },
+        {
+          "name": "exposure",
+          "value": 1
+        },
+        {
+          "name": "postprocess",
+          "value": true
+        },
+        {
+          "name": "fxaa",
+          "value": false
+        },
+        {
+          "name": "ssao",
+          "value": false
+        },
+        {
+          "name": "ssaoIntensity",
+          "value": 0.8
+        },
+        {
+          "name": "ssaoRadius",
+          "value": 1.7
+        },
+        {
+          "name": "ssaoBias",
+          "value": 0
+        },
+        {
+          "name": "ssaoBlurRadius",
+          "value": 1.22
+        },
+        {
+          "name": "ssaoBlurSharpness",
+          "value": 20
+        },
+        {
+          "name": "bloom",
+          "value": false
+        },
+        {
+          "name": "bloomThreshold",
+          "value": 0.32
+        },
+        {
+          "name": "bloomIntensity",
+          "value": 0.66
+        },
+        {
+          "name": "bloomRadius",
+          "value": 0.45
+        },
+        {
+          "name": "DoF",
+          "value": false
+        },
+        {
+          "name": "fStop",
+          "value": 0.1
+        },
+        {
+          "name": "dofFocusDistance",
+          "value": 2.4
+        },
+        {
+          "name": "fog",
+          "value": false
+        },
+        {
+          "name": "sunDispertion",
+          "value": 0.2
+        },
+        {
+          "name": "sunIntensity",
+          "value": 0.1
+        },
+        {
+          "name": "inscatteringCoeffs",
+          "value": [
+            0.3,
+            0.3,
+            0.3
+          ]
+        },
+        {
+          "name": "fogColor",
+          "value": [
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "name": "fogStart",
+          "value": 5
+        },
+        {
+          "name": "fogDensity",
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "id": "Xgaq9AtV9",
+      "name": "ReflectionProbe",
+      "x": -547.0326736373563,
+      "y": 1235.901091664716,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "xQ5nwkmwK",
+            "port": "out"
+          }
+        },
+        {
+          "name": "update",
+          "source": {
+            "id": "V0jRYXTQld",
+            "port": "changed"
+          }
+        },
+        {
+          "name": "origin",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "size",
+          "value": [
+            10,
+            10,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xQ5nwkmwK",
+      "name": "Skybox",
+      "x": -547.0326736373563,
+      "y": 1146.329925509736,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "rd-Ye-g2",
+            "port": "out"
+          }
+        },
+        {
+          "name": "sunPosition",
+          "value": [
+            5.84,
+            2.98,
+            0
+          ]
+        },
+        {
+          "name": "texture",
+          "source": {
+            "id": "V0jRYXTQld",
+            "port": "texture"
+          }
+        },
+        {
+          "name": "diffuseTexture"
+        },
+        {
+          "name": "backgroundBlur",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "6LS_7VBt7",
+      "name": "Geometry",
+      "x": 134.82590713734146,
+      "y": 1566.6850030839587,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "S64MmBjIv",
+            "port": "out"
+          }
+        },
+        {
+          "name": "position",
+          "value": [
+            0,
+            1.32,
+            0
+          ]
+        },
+        {
+          "name": "rotation",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "scale",
+          "value": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "name": "geometry",
+          "source": {
+            "id": "hIPeWfxaMP",
+            "port": "geometryOut"
+          }
+        },
+        {
+          "name": "tags",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "1V7W1saBL",
+      "name": "SSS SHADER",
+      "x": 169.63161078695197,
+      "y": 1173.547262449222,
+      "templateName": "Custom",
+      "params": []
+    },
+    {
+      "id": "S64MmBjIv",
+      "name": "Material",
+      "x": 46.619302608147166,
+      "y": 1302.3131019901305,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "FFGF5UFxw",
+            "port": "out"
+          }
+        },
+        {
+          "name": "baseColor",
+          "value": [
+            0.9999999999999524,
+            1.000000000000017,
+            1.0000000000000127,
+            1
+          ]
+        },
+        {
+          "name": "emissiveColor",
+          "value": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "emissiveColorIntensity",
+          "value": 1.85
+        },
+        {
+          "name": "roughness",
+          "value": 0.42
+        },
+        {
+          "name": "metallic",
+          "value": 0
+        },
+        {
+          "name": "baseColorMap",
+          "value": null
+        },
+        {
+          "name": "emissiveColorMap",
+          "value": null
+        },
+        {
+          "name": "normalMap",
+          "value": null
+        },
+        {
+          "name": "metallicMap",
+          "value": null
+        },
+        {
+          "name": "roughnessMap",
+          "value": null
+        },
+        {
+          "name": "occlusionMap",
+          "value": null
+        },
+        {
+          "name": "wireframe",
+          "value": false
+        },
+        {
+          "name": "castShadows",
+          "value": true
+        },
+        {
+          "name": "receiveShadows",
+          "value": true
+        },
+        {
+          "name": "vert",
+          "value": null
+        },
+        {
+          "name": "frag",
+          "source": {
+            "id": "1V7W1saBL",
+            "port": "frag"
+          }
+        },
+        {
+          "name": "uniforms",
+          "source": {
+            "id": "85k0yshYYS",
+            "port": "uniforms"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hIPeWfxaMP",
+      "name": "Combine",
+      "x": 102.84244542132376,
+      "y": 1442.9246733967186,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "geometry",
+          "source": {
+            "id": "MUXVn2AVh5",
+            "port": "geometry"
+          }
+        },
+        {
+          "name": "instances",
+          "source": {
+            "id": "Qa_NvvgEvW",
+            "port": "instances"
+          }
+        }
+      ]
+    },
+    {
+      "id": "WBRX6ebl4Z",
+      "name": "Custom",
+      "x": 457.8045228706641,
+      "y": 1556.0446207960426,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "UvHpqiW3qH",
+            "port": "out"
+          }
+        },
+        {
+          "name": "position",
+          "value": [
+            0,
+            -3.2,
+            0
+          ]
+        },
+        {
+          "name": "rotation",
+          "value": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "scale",
+          "value": [
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "name": "geometry",
+          "source": {
+            "id": "LN6lyx1n1A",
+            "port": "geometry"
+          }
+        },
+        {
+          "name": "tags",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "UvHpqiW3qH",
+      "name": "Material",
+      "x": 437.52240493093916,
+      "y": 1345.4692245001575,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "FFGF5UFxw",
+            "port": "out"
+          }
+        },
+        {
+          "name": "baseColor",
+          "value": [
+            0.2,
+            0.2,
+            0.2,
+            1
+          ]
+        },
+        {
+          "name": "emissiveColor",
+          "value": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "name": "emissiveColorIntensity",
+          "value": 1.85
+        },
+        {
+          "name": "roughness",
+          "value": 1
+        },
+        {
+          "name": "metallic",
+          "value": 0
+        },
+        {
+          "name": "baseColorMap",
+          "value": null
+        },
+        {
+          "name": "emissiveColorMap",
+          "value": null
+        },
+        {
+          "name": "normalMap",
+          "value": null
+        },
+        {
+          "name": "metallicMap",
+          "value": null
+        },
+        {
+          "name": "roughnessMap",
+          "value": null
+        },
+        {
+          "name": "occlusionMap",
+          "value": null
+        },
+        {
+          "name": "wireframe",
+          "value": false
+        },
+        {
+          "name": "castShadows",
+          "value": true
+        },
+        {
+          "name": "receiveShadows",
+          "value": true
+        },
+        {
+          "name": "vert",
+          "value": null
+        },
+        {
+          "name": "frag",
+          "value": null
+        },
+        {
+          "name": "uniforms",
+          "value": null
+        }
+      ]
+    },
+    {
+      "id": "LN6lyx1n1A",
+      "name": "Cube",
+      "x": 487.8045228706641,
+      "y": 1481.0446207960426,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "sx",
+          "value": 15
+        },
+        {
+          "name": "sy",
+          "value": 0.1
+        },
+        {
+          "name": "sz",
+          "value": 15
+        },
+        {
+          "name": "nx",
+          "value": 20
+        },
+        {
+          "name": "ny",
+          "value": 20
+        },
+        {
+          "name": "nz",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "id": "V0jRYXTQld",
+      "name": "Texture HDR With Brightness Reduction ",
+      "x": -518.1677481032243,
+      "y": 1086.1727982027617,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "url",
+          "value": "assets/mossy_forest_2k.hdr"
+        }
+      ]
+    },
+    {
+      "id": "8n2b2iOvXV",
+      "name": "Texture",
+      "x": 292.13170901723356,
+      "y": 1103.6023548016417,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "url",
+          "value": "assets/subsurface.png"
+        }
+      ]
+    },
+    {
+      "id": "85k0yshYYS",
+      "name": "Uniforms",
+      "x": 288.3879068295774,
+      "y": 1232.9825196452612,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "uSSSMap",
+          "source": {
+            "id": "8n2b2iOvXV",
+            "port": "texture out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "MUXVn2AVh5",
+      "name": "Sphere",
+      "x": 71.4084128186646,
+      "y": 1382.9246733967186,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "r",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "id": "Qa_NvvgEvW",
+      "name": "Instance Colors",
+      "x": 222.84244542132376,
+      "y": 1382.9246733967186,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "seed",
+          "value": 88
+        }
+      ]
+    },
+    {
+      "id": "3wGgtVEaLv",
+      "name": "Geometry",
+      "x": -18.950950049481975,
+      "y": 1581.6271568354157,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "S64MmBjIv",
+            "port": "out"
+          }
+        },
+        {
+          "name": "position",
+          "value": [
+            0,
+            1.6,
+            0
+          ]
+        },
+        {
+          "name": "rotation",
+          "value": [
+            -40,
+            -30.6,
+            0
+          ]
+        },
+        {
+          "name": "scale",
+          "value": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "name": "geometry",
+          "source": {
+            "id": "hIPeWfxaMP",
+            "port": "geometryOut"
+          }
+        },
+        {
+          "name": "tags",
+          "value": ""
+        }
+      ]
+    },
+    {
+      "id": "iepfF8ZFav",
+      "name": "Reuse Depth Buf Pass",
+      "x": 864.2219172697577,
+      "y": 1166.6338509835086,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "yErnd1g7wL",
+            "port": "out"
+          }
+        }
+      ]
+    },
+    {
+      "id": "WEmIoE19Wc",
+      "name": "Sphere Instances",
+      "x": 888.877316503946,
+      "y": 1279.6677143248899,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "r",
+          "value": 0.5
+        },
+        {
+          "name": "segments",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "AmKOhsr3YY",
+      "name": "Draw Geom",
+      "x": 861.6832607887205,
+      "y": 1333.0341242052739,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "iepfF8ZFav",
+            "port": "out"
+          }
+        },
+        {
+          "name": "texture",
+          "source": {
+            "id": "yw8Pf_zaG9",
+            "port": "texture out"
+          }
+        },
+        {
+          "name": "geom",
+          "source": {
+            "id": "WEmIoE19Wc",
+            "port": "geometry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6_4FsMWTmu",
+      "name": "Texture Overlay",
+      "x": 815.1051603279428,
+      "y": 1379.191972880375,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "Fe3wEGWJos",
+            "port": "out1"
+          }
+        },
+        {
+          "name": "texture",
+          "source": {
+            "id": "iepfF8ZFav",
+            "port": "texture"
+          }
+        },
+        {
+          "name": "opacity",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "Fe3wEGWJos",
+      "name": "Sequence",
+      "x": 813.6449542543032,
+      "y": 1063.8992213707888,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "SH8OiaXKk",
+            "port": "postRenderOut"
+          }
+        }
+      ]
+    },
+    {
+      "id": "yErnd1g7wL",
+      "name": "Copy Texture",
+      "x": 863.554522586569,
+      "y": 1120.701902388288,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "Fe3wEGWJos",
+            "port": "out1"
+          }
+        },
+        {
+          "name": "texture"
+        },
+        {
+          "name": "opacity",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "id": "yw8Pf_zaG9",
+      "name": "Texture",
+      "x": 1069.9022033936656,
+      "y": 1075.7098145522073,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "url",
+          "value": "assets/Screenshot 2020-01-18 at 16.55.08.png"
+        }
+      ]
+    },
+    {
+      "id": "R3Th6nFOvq",
+      "name": "Draw Geom",
+      "x": 1043.3539851970834,
+      "y": 1334.370798964625,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "iepfF8ZFav",
+            "port": "out"
+          }
+        },
+        {
+          "name": "texture",
+          "source": {
+            "id": "yw8Pf_zaG9",
+            "port": "texture out"
+          }
+        },
+        {
+          "name": "geom",
+          "source": {
+            "id": "KCncENzxtz",
+            "port": "geometry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "KCncENzxtz",
+      "name": "Rounded Cube Instances",
+      "x": 1086.8013835144166,
+      "y": 1274.583457920622,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "r",
+          "value": 0.5
+        },
+        {
+          "name": "segments",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "4Pnc1PQ-DK",
+      "name": "Draw Geom",
+      "x": 1208.9561343481605,
+      "y": 1400.546278623015,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "iepfF8ZFav",
+            "port": "out"
+          }
+        },
+        {
+          "name": "texture",
+          "source": {
+            "id": "yw8Pf_zaG9",
+            "port": "texture out"
+          }
+        },
+        {
+          "name": "position",
+          "value": [
+            0.16,
+            -0.26,
+            0
+          ]
+        },
+        {
+          "name": "geom",
+          "source": {
+            "id": "ZC8N7cs44g",
+            "port": "geometry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ZC8N7cs44g",
+      "name": "Rounded Cube",
+      "x": 1230.8115403213176,
+      "y": 1298.3845246173005,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "x",
+          "value": 1.5
+        },
+        {
+          "name": "y",
+          "value": 3
+        },
+        {
+          "name": "z",
+          "value": 7
+        },
+        {
+          "name": "segments",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "a7amjIuwCG",
+      "name": "Draw Geom",
+      "x": 1398.2173324741314,
+      "y": 1391.3779160840409,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "iepfF8ZFav",
+            "port": "out"
+          }
+        },
+        {
+          "name": "texture",
+          "source": {
+            "id": "yw8Pf_zaG9",
+            "port": "texture out"
+          }
+        },
+        {
+          "name": "position",
+          "value": [
+            0.16,
+            3.56,
+            0
+          ]
+        },
+        {
+          "name": "roughness",
+          "public": true,
+          "value": 0.24
+        },
+        {
+          "name": "geom",
+          "source": {
+            "id": "-khuzGwN9H",
+            "port": "geometry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "-khuzGwN9H",
+      "name": "Rounded Cube",
+      "x": 1421.1382388215673,
+      "y": 1289.2161620783263,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "x",
+          "value": 14
+        },
+        {
+          "name": "y",
+          "value": 3
+        },
+        {
+          "name": "z",
+          "value": 0.5
+        },
+        {
+          "name": "segments",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "id": "rd-Ye-g2",
+      "name": "Group",
+      "x": -422.13829327258674,
+      "y": 905.5229412567674,
+      "templateName": "Custom",
+      "params": [
+        {
+          "name": "in",
+          "source": {
+            "id": "z2WEkXQCc",
+            "port": "out1"
+          }
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": "3bgqA18r",
+      "x": -224.6589682428819,
+      "y": 933.3455655176223,
+      "width": 277,
+      "height": 54,
+      "fontSize": 24,
+      "backgroundColor": [
+        0.3319761082182732,
+        0.3319761082182969,
+        0.3319761082182952,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "CAMERA",
+      "collapseFlags": {}
+    },
+    {
+      "id": "0bj2cMaJj",
+      "x": -548.9169703558721,
+      "y": 937.8432346317742,
+      "width": 277,
+      "height": 54,
+      "fontSize": 24,
+      "backgroundColor": [
+        0.3319761082182732,
+        0.3319761082182969,
+        0.3319761082182952,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "LIGHTS",
+      "collapseFlags": {}
+    },
+    {
+      "id": "tkWq8Fg7",
+      "x": 818.4954197344262,
+      "y": 1410.5613678671607,
+      "width": 180,
+      "height": 50,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.6668948420596001,
+        1.6789859433319342e-13,
+        0.278178460449915,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "You need to recompile this node to see reflections. WHY?",
+      "collapseFlags": {}
+    },
+    {
+      "id": "CaGrz7DV",
+      "x": 108.6658861949586,
+      "y": 931.1550452820172,
+      "width": 277,
+      "height": 54,
+      "fontSize": 24,
+      "backgroundColor": [
+        0.3319761082182732,
+        0.3319761082182969,
+        0.3319761082182952,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "GEOMETRY",
+      "collapseFlags": {}
+    },
+    {
+      "id": "P3y72ar4",
+      "x": -14.227922108958865,
+      "y": 1628.9394325321618,
+      "width": 180,
+      "height": 50,
+      "fontSize": 20,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "BALLS",
+      "collapseFlags": {}
+    },
+    {
+      "id": "nlfMoj9w",
+      "x": 457.4740841247709,
+      "y": 1606.1948913510803,
+      "width": 180,
+      "height": 50,
+      "fontSize": 20,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "FLOOR",
+      "collapseFlags": {}
+    },
+    {
+      "id": "fkvVT0kL",
+      "x": 793.6336377918603,
+      "y": 939.680945435915,
+      "width": 277,
+      "height": 54,
+      "fontSize": 24,
+      "backgroundColor": [
+        0.3319761082182732,
+        0.3319761082182969,
+        0.3319761082182952,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "GLASS ",
+      "collapseFlags": {}
+    },
+    {
+      "id": "a0COSCVV",
+      "x": 129.65333400005517,
+      "y": 343.13778955924465,
+      "width": 180,
+      "height": 83,
+      "fontSize": 10,
+      "backgroundColor": [
+        0.1,
+        0.1,
+        0.1,
+        1
+      ],
+      "textColor": [
+        0.7,
+        0.7,
+        0.7,
+        1
+      ],
+      "text": "Transparent things are rendered after main scene is done via secondary render trigger and use renderer frameColorText for refraction effects",
+      "collapseFlags": {}
+    }
+  ]
+}

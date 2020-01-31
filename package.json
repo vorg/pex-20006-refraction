@@ -1,0 +1,23 @@
+{
+  "name": "pex-20006-refraction",
+  "dependencies": {
+    "canvas-screenshot": "^2.0.0",
+    "fit-rect": "^1.0.3",
+    "geom-center-and-normalize": "^1.0.3",
+    "geom-normals": "^1.0.1",
+    "geom-parse-obj": "^1.0.0",
+    "parse-hdr": "^1.0.0",
+    "pex-color": "^1.1.1",
+    "pex-context": "^2.10.2",
+    "pex-geom": "^2.0.2",
+    "pex-io": "^2.1.0",
+    "pex-math": "^3.0.0-4",
+    "pex-random": "^1.0.1",
+    "pex-renderer": "^3.0.0-44",
+    "primitive-cube": "^2.0.1",
+    "primitive-geometry": "^1.1.0",
+    "primitive-rounded-cube": "^1.0.2",
+    "primitive-sphere": "^3.0.0",
+    "ramda": "^0.26.1"
+  }
+}
